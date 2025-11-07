@@ -1,41 +1,25 @@
-/* Liste multi-produits (grille auto). 
-   Astuce : tu peux mettre soit amazon_url, soit asin. 
-   Si asin est présent, le lien affilié est construit avec window.AMAZON_TAG si défini. */
-
-window.AMAZON_TAG = "novanad-21"; // remplace par ton tag si besoin
-
-// Tu peux dupliquer/éditer ces objets.
+// data-products.js
+// Liste des produits (tu peux en ajouter autant que tu veux)
 const PRODUCTS = [
   {
-    title: "Tablette dessin enfant dinosaure",
-    desc: "Ardoise magique 8.5\" — jouet éducatif et créatif pour enfants.",
-    image: "assets/img/tablette-dino.jpg",
-    amazon_url: "https://amzn.to/4oYjggp",
-    rating: 4.6,
-    badges: ["Populaire", "Enfant"]
+    id: 1,
+    title: "Tablette LCD de dessin (Enfant)",
+    desc: "Ardoise magique — activité créative et ludique.",
+    image: "assets/img/prod-1.jpg",
+    amazon_url: "https://amzn.to/43lWRB7"
   },
   {
-    title: "Lampe de bureau LED flexible",
-    desc: "3 températures de couleur, col de cygne souple, éco & compacte.",
-    image: "assets/img/lampe-led.jpg",
-    asin: "B09EXAMPLE1",
-    rating: 4.5,
-    badges: ["Bureau"]
+    id: 2,
+    title: "Jeu éducatif créatif",
+    desc: "Développe l’imagination avec un jeu coloré et fun.",
+    image: "assets/img/prod-2.jpg",
+    amazon_url: "https://amzn.to/47xPj0Q"
   },
   {
-    title: "Bouteille isotherme 500 ml",
-    desc: "Inox 304, garde le chaud/froid 12–24 h, idéale au quotidien.",
-    image: "assets/img/bouteille.jpg",
-    asin: "B0BEXAMPLE2",
-    rating: 4.7,
-    badges: ["Sport", "Nomade"]
-  },
-  {
-    title: "Câble USB-C tressé 2 m",
-    desc: "Charge rapide PD, très résistant, parfait pour la maison et le bureau.",
-    image: "assets/img/cable.jpg",
-    asin: "B0CEXAMPLE3",
-    rating: 4.4,
-    badges: ["Top petit prix"]
+    id: 3,
+    title: "Accessoire cartoon",
+    desc: "Petit accessoire mignon pour le quotidien.",
+    image: "assets/img/prod-3.jpg",
+    amazon_url: "https://amzn.to/3JqATX3"
   }
 ];
