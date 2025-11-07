@@ -1,0 +1,187 @@
+
+/* ----- RESET ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background: radial-gradient(ellipse at 20% 10%, #ffe4a8 0%, #fff8e3 40%, #d6fbf2 100%);
+  min-height: 100vh;
+  color: var(--ink, #222);
+  padding-bottom: 80px;
+}
+
+/* ----- TOP BAR ----- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.topbar a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #000;
+  border: 3px solid #000;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: #fff;
+  transition: 0.2s;
+}
+
+.topbar a:hover {
+  transform: translateY(-2px);
+}
+
+/* ----- HERO ----- */
+.hero {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: #ff6b6b;
+  padding: 14px 24px;
+  color: #fff;
+  border-radius: 18px;
+  font-weight: 700;
+  border: 3px solid #000;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+}
+
+/* ----- SECTION PRODUITS ----- */
+.products-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.badge {
+  background: #2ecc71;
+  padding: 6px 14px;
+  border-radius: 16px;
+  color: #fff;
+  font-weight: 700;
+  border: 2px solid #000;
+}
+
+/* ----- GRILLE ----- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* ----- CARTE PRODUIT ----- */
+.card {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 6px 6px 0 #00000040;
+  text-align: center;
+}
+
+/* ----- IMAGE PRODUIT (taille moyenne) ----- */
+.card__img img {
+  width: 200px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 4px 4px 0 #00000040;
+  margin-bottom: 15px;
+}
+
+/* TITRE */
+.card__title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* DESCRIPTION */
+.card__desc {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+/* ----- BOUTON AMAZON ----- */
+.btn--amazon {
+  background: #ff9900;
+  padding: 10px 16px;
+  color: white;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 2px solid #000;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 4px 4px 0 #00000040;
+}
+
+.btn--amazon:hover {
+  transform: translateY(-3px);
+}
+
+/* ----- FOOTER ----- */
+.site-footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+.logo {
+  height: 32px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+}
