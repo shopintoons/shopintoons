@@ -1,51 +1,66 @@
-// script.js — version robuste "Amazon affilié"
+// Rendu de la grille multi-produits (affiliation Amazon)
 (function () {
-  console.log("🚀 script.js chargé");
-
-  // 1️⃣ Trouve la grille où afficher les produits
   const grid = document.getElementById("productGrid");
+  const yearSpan = document.getElementById("year");
+  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
   if (!grid) {
-    console.error("❌ Élément #productGrid introuvable dans la page !");
+    console.error("❌ #productGrid introuvable");
     return;
   }
 
-  // 2️⃣ Récupère les produits (peu importe comment ils ont été déclarés)
-  const products =
-    window.PRODUCTS ||
-    (typeof PRODUCTS !== "undefined" ? PRODUCTS : null);
-
-  if (!Array.isArray(products)) {
-    console.error("❌ Aucun produit trouvé (PRODUCTS non défini)");
-    return;
+  function buildAmazonUrl(p) {
+    if (p.amazon_url) return p.amazon_url;
+    if (p.asin) {
+      const tag = (typeof window.AMAZON_TAG === "string" && window.AMAZON_TAG.trim()) ? window.AMAZON_TAG.trim() : "";
+      const base = `https://www.amazon.fr/dp/${encodeURIComponent(p.asin)}`;
+      return tag ? `${base}?tag=${encodeURIComponent(tag)}` : base;
+    }
+    return "#";
   }
 
-  console.log(`🛍️ ${products.length} produit(s) trouvé(s)`);
+  function stars(rating = 0) {
+    const full = Math.floor(rating);
+    const half = rating - full >= 0.5 ? 1 : 0;
+    const empty = 5 - full - half;
+    return "★".repeat(full) + (half ? "½" : "") + "☆".repeat(empty);
+  }
 
-  // 3️⃣ Vide la grille avant de la remplir
-  grid.innerHTML = "";
+  function chips(arr = []) {
+    return (arr || []).map(txt => `<span class="chip">${txt}</span>`).join("");
+  }
 
-  // 4️⃣ Crée une carte pour chaque produit
-  products.forEach((p) => {
-    const card = document.createElement("article");
-    card.className = "card";
-    card.innerHTML = `
-      <div class="card__img">
-        <img src="${p.image}" alt="${p.title}" loading="lazy">
-      </div>
-      <div class="card__body">
+  function render(list) {
+    grid.innerHTML = "";
+    (list || []).forEach(p => {
+      const url = buildAmazonUrl(p);
+      const el = document.createElement("article");
+      el.className = "card";
+      el.innerHTML = `
+        <div class="card__img">
+          <img src="${p.image}" alt="${p.title}" loading="lazy">
+        </div>
         <h3 class="card__title">${p.title}</h3>
         <p class="card__desc">${p.desc || ""}</p>
-        <a class="btn btn--amazon"
-           href="${p.amazon_url}"
+        <div class="card__meta">
+          <span class="stars" aria-label="Note ${p.rating || 0}/5">${stars(p.rating)}</span>
+          <span class="badges">${chips(p.badges)}</span>
+        </div>
+        <a class="btn--amazon"
+           href="${url}"
            target="_blank"
-           rel="nofollow sponsored noopener">
+           rel="nofollow sponsored noopener"
+           aria-label="Voir sur Amazon : ${p.title}">
           Voir sur Amazon
         </a>
-      </div>
-    `;
-    grid.appendChild(card);
-  });
+      `;
+      grid.appendChild(el);
+    });
+  }
 
-  console.log("✅ Rendu terminé !");
+  // Supporte window.PRODUCTS ou PRODUCTS (const) sans casser
+  const list =
+    window.PRODUCTS ||
+    (typeof PRODUCTS !== "undefined" ? PRODUCTS : []);
+  render(list);
 })();
