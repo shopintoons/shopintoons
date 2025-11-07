@@ -185,3 +185,15 @@ body {
   margin-right: 10px;
   vertical-align: middle;
 }
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  height: 28px;          /* ajustable : 24–36px selon ton goût */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
