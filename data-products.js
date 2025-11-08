@@ -1,6 +1,5 @@
 // data-products.js
 window.PRODUCTS = [
-
   {
     id: "tab",
     title: "Tablette dessin enfant dinosaure",
