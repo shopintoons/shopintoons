@@ -26,31 +26,31 @@
     </nav>
   </header>
 
-  <!-- Hero (plus sobre) -->
+  <!-- Hero -->
   <section class="hero">
     <h1>Style, fun & coloré 🎨</h1>
     <p class="sub">Produits simples, pratiques et souriants — liens affiliés Amazon.</p>
     <a href="#products" class="btn-primary">Voir les produits</a>
   </section>
 
+  <!-- Produits -->
   <main>
-    <!-- Section produits -->
     <section id="products" class="products-section">
       <div class="section-head">
         <h2>Produits</h2>
         <span class="badge">Nouveautés</span>
       </div>
 
+      <!-- ⚠️ C’est ICI que le JS injecte la grille -->
       <div id="productGrid" class="grid"></div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer id="contact" class="site-footer">
+  <footer class="site-footer" id="contact">
     <p>© <span id="year"></span> Shopitoons — Cartoon edition</p>
   </footer>
 
-  <!-- Data & rendu -->
   <script src="data-products.js"></script>
   <script src="script.js"></script>
 </body>
