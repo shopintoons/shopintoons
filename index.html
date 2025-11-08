@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>SHOPINTOONS — Trouvailles fun & utiles</title>
 
   <!-- Police -->
@@ -10,7 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="shopitoons-logo.png" />
 </head>
 <body>
   <!-- Topbar -->
@@ -41,16 +46,16 @@
         <span class="badge">Nouveautés</span>
       </div>
 
-      <!-- ⚠️ C’est ICI que le JS injecte la grille -->
       <div id="productGrid" class="grid"></div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" id="contact">
+  <footer id="contact" class="site-footer">
     <p>© <span id="year"></span> Shopitoons — Cartoon edition</p>
   </footer>
 
+  <!-- Données + rendu -->
   <script src="data-products.js"></script>
   <script src="script.js"></script>
 </body>
