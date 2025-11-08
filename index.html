@@ -5,55 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SHOPINTOONS — Trouvailles fun & utiles</title>
 
+  <!-- Police -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <a href="#" class="brand">
-      <img class="logo" src="assets/img/shopitoons-logo.png" alt="SHOPINTOONS" />
-      <span class="brand__txt">SHOPINTOONS</span>
+    <a class="brand" href="#">
+      <img class="logo-bounce" src="assets/img/shopitoons-logo.png" alt="Shopitoons" width="44" height="44">
+      <span>SHOPINTOONS</span>
     </a>
 
     <nav class="nav">
       <a href="#products">Produits</a>
-      <a href="#about">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section class="hero" id="home">
+  <section class="hero">
     <h1>Des trouvailles fun & utiles 🎉</h1>
-    <p>
-      Sélection soignée avec lien d’affiliation Amazon — pratique, simple et bonne humeur.
-    </p>
-    <a href="#products" class="btn btn--primary">Voir les produits</a>
+    <p>Produits simples, pratiques et souriants — liens affiliés Amazon.</p>
+    <a href="#products" class="btn-primary">Voir les produits</a>
   </section>
 
   <!-- Produits -->
   <main>
     <section id="products" class="products-section">
       <div class="section-head">
-        <h2>Nos sélections</h2>
+        <h2>Produits</h2>
         <span class="badge">Nouveautés</span>
       </div>
 
-      <!-- Grille auto -->
       <div id="productGrid" class="grid"></div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="site-footer" id="about">
-    <p><strong>SHOPINTOONS</strong> — des idées cool et utiles, testées et approuvées.</p>
-    <p class="muted">
-      Certains liens sont des liens d’affiliation Amazon : si tu achètes via ces liens, nous pouvons recevoir une petite commission (sans coût supplémentaire pour toi). Merci 🙏
+  <footer class="site-footer" id="contact">
+    <p>© <span id="year"></span> SHOPINTOONS — avec le sourire.</p>
+    <p class="legal">
+      Certains liens sont des liens d’affiliation Amazon (vous ne payez pas plus cher).
     </p>
-    <p id="contact">© <span id="year"></span> SHOPINTOONS · Tous droits réservés</p>
   </footer>
 
   <script src="data-products.js"></script>
