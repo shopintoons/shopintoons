@@ -1,115 +1,100 @@
 :root{
   --ink:#201c1a;
-  --bg1:#fffce2;
+  --muted:#6b6662;
+  --bg1:#fff2cc;
   --bg2:#e9fff5;
+  --brand:#ff6b6b;
+  --brand-dark:#e45050;
+  --pill:#10b981;
   --card:#ffffff;
-  --shadow:0 8px 30px rgba(32,28,26,0.08);
+  --shadow: 0 8px 30px rgba(32,28,26,.08);
+
+  /* ➜ une seule variable pour la taille des vignettes */
+  --thumb-h: 180px; /* tu peux passer à 160px/150px si tu veux encore plus petit */
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;}
+html,body{margin:0;padding:0}
 body{
-  font-family:"Fredoka", sans-serif;
+  font-family:"Fredoka", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   color:var(--ink);
   background: radial-gradient(1200px 800px at 100% 0%, var(--bg2), var(--bg1));
 }
 
-/* TOPBAR */
+/* Topbar */
 .topbar{
   position:sticky;top:0;z-index:20;
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px 18px;background:rgba(255,255,255,0.7);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  gap:16px;padding:14px 18px;background:rgba(255,255,255,.7);
+  backdrop-filter: blur(8px);
+  border-bottom:1px solid rgba(0,0,0,.05);
 }
-.brand{
-  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;
-}
-.brand span{letter-spacing:0.5px;}
-
-.logo-bounce{
-  display:block;border-radius:8px;
-  animation: logoFloat 2.6s ease-in-out infinite;
-}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800}
+.brand span{letter-spacing:.5px}
+.logo-bounce{display:block;border-radius:8px;animation:logoFloat 2.6s ease-in-out infinite}
 @keyframes logoFloat{
-  0%{transform:translateY(0) rotate(0deg);}
-  50%{transform:translateY(-4px) rotate(-2deg);}
-  100%{transform:translateY(0) rotate(0deg);}
+  0%{ transform:translateY(0) rotate(0) }
+  50%{ transform:translateY(-4px) rotate(-2deg) }
+  100%{ transform:translateY(0) rotate(0) }
 }
 
 .nav a{
-  color:var(--ink);
-  text-decoration:none;
-  font-weight:600;
-  margin-left:14px;
+  color:var(--ink);text-decoration:none;font-weight:600;margin-left:14px;
+  border-radius:8px;padding:8px 10px;
 }
+.nav a:hover{background:#ffffffa8}
 
-/* HERO */
-.hero{
-  text-align:center;
-  padding:50px 16px 40px;
-}
-.hero h1{
-  font-size: clamp(26px, 4.8vw, 42px);
-  margin:0 0 10px;
-}
-.hero p{color:#444;font-size:16px;}
+/* Hero */
+.hero{padding:56px 18px 28px;text-align:center;max-width:980px;margin:0 auto}
+.hero h1{font-size:clamp(28px,4.5vw,48px);margin:0 0 6px 0}
+.hero .sub{color:var(--muted);margin:0 0 18px 0}
 .btn-primary{
-  display:inline-block;margin-top:14px;
-  background:#111;color:#fff;padding:10px 18px;
-  border-radius:10px;text-decoration:none;font-weight:600;
+  display:inline-block;background:#ff6b6b;color:#fff;text-decoration:none;
+  padding:12px 18px;border-radius:14px;border:3px solid #201c1a;box-shadow:3px 5px 0 #201c1a;
+  font-weight:700;transition:transform .1s ease;user-select:none
+}
+.btn-primary:hover{transform:translateY(-1px)}
+
+/* Section produits */
+.products-section{max-width:1100px;margin:8px auto 56px;padding:0 18px}
+.section-head{display:flex;align-items:center;gap:12px;margin:12px 0 18px}
+.section-head h2{margin:0}
+.badge{
+  background:var(--pill);color:#fff;border:2px solid #201c1a;border-radius:20px;
+  padding:5px 12px;font-weight:700
 }
 
-
-/* ----- PRODUITS ----- */
-
-/* Grille compacte */
+/* Grille responsive */
 .grid{
   display:grid;
-  gap:18px;
-  grid-template-columns:repeat(auto-fit, minmax(190px, 1fr));
-  padding:20px 0 40px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:22px;
 }
 
-/* Carte compacte */
+/* Carte produit */
 .card{
-  background:var(--card);
-  border-radius:14px;
-  box-shadow:var(--shadow);
-  padding:14px;
-  transition:transform .15s ease, box-shadow .15s ease;
+  background:var(--card);border-radius:18px;padding:12px 12px 14px;border:1px solid rgba(0,0,0,.08);
+  box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;min-height:100%;
+  transition:transform .08s ease
 }
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 34px rgba(0,0,0,0.14);
-}
+.card:hover{transform:translateY(-2px)}
 
-/* Image vignette réduite */
 .card__img{
-  width:100%;
-  height:150px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  margin-bottom:10px;
+  height:var(--thumb-h); /* ➜ taille des vignettes */
+  background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(0,0,0,.06);overflow:hidden
 }
-.card__img img{
-  max-width:100%;
-  max-height:100%;
-  object-fit:contain;
-}
+.card__img img{max-width:100%;max-height:100%;object-fit:contain}
 
-.card__title{font-size:15px;margin:0 0 6px;}
-.card__desc{font-size:13px;color:#666;margin:0 0 8px;min-height:32px;}
+.card__title{font-size:18px;margin:12px 4px 6px 4px}
+.card__desc{color:var(--muted);margin:0 4px 10px 4px;min-height:42px}
 
 .btn--amazon{
-  display:inline-block;width:100%;
-  background:#ffd814;border-radius:8px;
-  padding:8px;text-align:center;
-  color:#111;font-size:13px;font-weight:700;
-  text-decoration:none;
+  display:inline-block;text-align:center;font-weight:800;text-decoration:none;
+  border:2px solid #201c1a;border-radius:12px;padding:10px 12px;
+  background:#ffd54f;color:#201c1a
 }
+.btn--amazon:hover{filter:brightness(1.03)}
 
 /* Footer */
-.footer{text-align:center;padding:20px 0;color:#444;font-size:14px;}
+.site-footer{padding:28px 18px 40px;text-align:center;color:var(--muted)}
