@@ -3,60 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shopintoons — Trouvailles fun & colorées</title>
-  <meta name="description" content="Shopitoons : sélection fun et colorée avec liens d'affiliation Amazon." />
+  <title>SHOPINTOONS — Trouvailles fun & utiles</title>
 
-  <!-- Police sympa -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Topbar -->
   <header class="topbar">
-    <a href="#home" class="brand" aria-label="Shopitoons">
-      <img src="assets/img/shopintoons-logo.png" alt="Shopitoons" class="logo" />
-      <span>Shopitoons</span>
+    <a href="#" class="brand">
+      <img class="logo" src="assets/img/shopitoons-logo.png" alt="SHOPINTOONS" />
+      <span class="brand__txt">SHOPINTOONS</span>
     </a>
 
     <nav class="nav">
-      <a href="#home">Accueil</a>
       <a href="#products">Produits</a>
       <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="home">
-    <h1>Style, fun & coloré 🎨</h1>
-    <p>Une sélection qui met la bonne humeur — produits recommandés avec lien d’affiliation Amazon.</p>
-    <a href="#products" class="btn-primary wiggle">Voir les produits</a>
+    <h1>Des trouvailles fun & utiles 🎉</h1>
+    <p>
+      Sélection soignée avec lien d’affiliation Amazon — pratique, simple et bonne humeur.
+    </p>
+    <a href="#products" class="btn btn--primary">Voir les produits</a>
   </section>
 
   <!-- Produits -->
   <main>
     <section id="products" class="products-section">
       <div class="section-head">
-        <h2>Produits</h2>
+        <h2>Nos sélections</h2>
         <span class="badge">Nouveautés</span>
       </div>
 
+      <!-- Grille auto -->
       <div id="productGrid" class="grid"></div>
-    </section>
-
-    <section id="about" class="about">
-      <h3>À propos</h3>
-      <p>
-        Shopintoons partage des produits joyeux et colorés. Les liens présents peuvent être des liens affiliés Amazon —
-        cela nous aide sans coût supplémentaire pour vous. Merci 💛
-      </p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>© <span id="year"></span> Shopintoons — Tous droits réservés.</p>
+  <!-- Footer -->
+  <footer class="site-footer" id="about">
+    <p><strong>SHOPINTOONS</strong> — des idées cool et utiles, testées et approuvées.</p>
+    <p class="muted">
+      Certains liens sont des liens d’affiliation Amazon : si tu achètes via ces liens, nous pouvons recevoir une petite commission (sans coût supplémentaire pour toi). Merci 🙏
+    </p>
+    <p id="contact">© <span id="year"></span> SHOPINTOONS · Tous droits réservés</p>
   </footer>
 
   <script src="data-products.js"></script>
