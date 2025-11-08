@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shopintoons — Trouvailles fun & utiles</title>
+  <title>SHOPINTOONS — Trouvailles fun & utiles</title>
 
   <!-- Police -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,45 +13,45 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Topbar -->
+  <header class="topbar">
+    <a class="brand" href="#">
+      <img class="logo-bounce" src="shopitoons-logo.png" alt="Shopitoons" width="44" height="44">
+      <span>SHOPINTOONS</span>
+    </a>
 
-<header class="topbar">
-  <a class="brand" href="#">
-    <img class="logo-bounce" src="assets/img/shopitoons-logo.png" alt="Shopintoons" width="44" height="44">
-    <span>SHOPINTOONS</span>
-  </a>
+    <nav class="nav">
+      <a href="#products">Produits</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <nav class="nav">
-    <a href="#products">Produits</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <h1>Style, fun & coloré 🎨</h1>
-  <p>Produits simples, pratiques et souriants — liens affiliés Amazon.</p>
-  <a href="#products" class="btn-primary">Voir les produits</a>
-</section>
-
-<!-- PRODUITS -->
-<main>
-  <section id="products" class="products-section">
-    <div class="section-head">
-      <h2>Produits</h2>
-      <span class="badge">Nouveautés</span>
-    </div>
-
-    <div id="productGrid" class="grid"></div>
+  <!-- Hero (plus sobre) -->
+  <section class="hero">
+    <h1>Style, fun & coloré 🎨</h1>
+    <p class="sub">Produits simples, pratiques et souriants — liens affiliés Amazon.</p>
+    <a href="#products" class="btn-primary">Voir les produits</a>
   </section>
-</main>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© <span id="year"></span> Shopitoons — Cartoon edition</p>
-</footer>
+  <main>
+    <!-- Section produits -->
+    <section id="products" class="products-section">
+      <div class="section-head">
+        <h2>Produits</h2>
+        <span class="badge">Nouveautés</span>
+      </div>
 
-<script src="data-products.js"></script>
-<script src="script.js"></script>
+      <div id="productGrid" class="grid"></div>
+    </section>
+  </main>
 
+  <!-- Footer -->
+  <footer id="contact" class="site-footer">
+    <p>© <span id="year"></span> Shopitoons — Cartoon edition</p>
+  </footer>
+
+  <!-- Data & rendu -->
+  <script src="data-products.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
