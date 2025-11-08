@@ -33,6 +33,10 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    render(window.PRODUCTS || []);
+  const data = (typeof window !== "undefined" && window.PRODUCTS)
+             || (typeof PRODUCTS !== "undefined" ? PRODUCTS : []);
+  render(data);
+});
+
   });
 })();
