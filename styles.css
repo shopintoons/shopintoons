@@ -38,8 +38,17 @@ body{
 
 /* Hero */
 .hero{ text-align:center; padding:48px 16px 24px }
-.hero h1{ font-size:clamp(28px,4.2vw,44px); margin:0 0 8px }
-.hero .sub{ margin:0 0 18px; color:var(--muted) }
+/* Titre du hero plus sobre */
+.hero h1{
+  font-size: clamp(28px, 4.2vw, 54px); /* taille un peu plus contenue */
+  letter-spacing: .3px;                 /* micro resserrage */
+}
+
+/* Sous-titre un tout petit peu plus net */
+.hero .sub{
+  font-size: clamp(14px, 1.4vw, 16px);
+  opacity: .92;
+}
 .btn-primary{
   display:inline-block; background:#ff6b6b; color:#fff; text-decoration:none;
   font-weight:700; border-radius:14px; padding:10px 18px; box-shadow:var(--shadow);
