@@ -10,10 +10,9 @@
     if (!grid || !Array.isArray(list)) return;
     grid.innerHTML = "";
 
-    list.forEach(p => {
+    list.forEach((p) => {
       const card = document.createElement("article");
       card.className = "card";
-
       card.innerHTML = `
         <div class="card__img">
           <img src="${p.image}" alt="${p.title}">
@@ -25,7 +24,7 @@
              href="${p.amazon_url}"
              target="_blank"
              rel="nofollow sponsored noopener">
-            🛒 Voir sur Amazon
+            Voir sur Amazon
           </a>
         </div>
       `;
