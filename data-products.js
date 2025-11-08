@@ -1,7 +1,7 @@
 // data-products.js
 const PRODUCTS = [
   {
-    id: "tab",
+    id: "tablette-dino",
     title: "Tablette dessin enfant dinosaure",
     desc: "Ardoise magique 8.5 pouces — jouet éducatif et créatif pour enfants de 2 à 6 ans.",
     image: "assets/img/tablette-dino.jpg",
