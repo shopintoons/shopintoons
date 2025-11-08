@@ -13,14 +13,14 @@ window.PRODUCTS = [
     title: "Tapis de bureau confort",
     desc: "Surface douce et antidérapante — idéal pour clavier & souris, confort au quotidien.",
     image: "tapis.jpg",
-    amazon_url: "https://amzn.to/3JqATX3"   // lien tapis
+    amazon_url: "https://amzn.to/47xPj0Q"   // lien tapis
   },
   {
     id: "ecouteur",
     title: "Écouteurs sans fil",
     desc: "Connexion stable & boîtier compact — autonomie confortable, parfait pour la journée.",
     image: "ecouteur.png",
-    amazon_url: "https://amzn.to/47xPj0Q"   // lien écouteurs
+    amazon_url: "https://amzn.to/3JqATX3"   // lien écouteurs
   },
   {
     id: "def",
