@@ -1,5 +1,6 @@
-// script.js — rendu de la grille + utilitaires
+// script.js
 (function () {
+  // année footer
   const yearSpan = document.getElementById("year");
   if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
@@ -12,6 +13,7 @@
     list.forEach(p => {
       const card = document.createElement("article");
       card.className = "card";
+
       card.innerHTML = `
         <div class="card__img">
           <img src="${p.image}" alt="${p.title}">
@@ -19,11 +21,11 @@
         <div class="card__body">
           <h3 class="card__title">${p.title}</h3>
           <p class="card__desc">${p.desc || ""}</p>
-          <a class="btn btn--amazon"
+          <a class="btn-amazon"
              href="${p.amazon_url}"
              target="_blank"
              rel="nofollow sponsored noopener">
-            Voir sur Amazon
+            🛒 Voir sur Amazon
           </a>
         </div>
       `;
@@ -31,19 +33,7 @@
     });
   }
 
-  // scroll doux pour hero bouton
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener("click", e => {
-      const id = a.getAttribute("href");
-      if (id.length > 1) {
-        const el = document.querySelector(id);
-        if (el) {
-          e.preventDefault();
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }
-    });
+  document.addEventListener("DOMContentLoaded", () => {
+    render(window.PRODUCTS || []);
   });
-
-  render(window.PRODUCTS || []);
 })();
