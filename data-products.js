@@ -1,5 +1,6 @@
 // data-products.js
-const PRODUCTS = [
+window.PRODUCTS = [
+
   {
     id: "tab",
     title: "Tablette dessin enfant dinosaure",
