@@ -12,7 +12,7 @@ window.PRODUCTS = [
     id: "tapis",
     title: "Tapis de bureau confort",
     desc: "Surface douce et antidérapante — idéal pour clavier & souris, confort au quotidien.",
-    image: "tapis.jpg",
+    image: "tapis.png",
     amazon_url: "https://amzn.to/47xPj0Q"   // lien tapis
   },
   {
